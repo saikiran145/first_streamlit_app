@@ -18,8 +18,6 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show=my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
-        
-        
 import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -31,5 +29,5 @@ streamlit.dataframe(my_data_rows)
 add_my_fruit = streamlit.text_input('Which fruit do you need')
 streamlit.write('The user entered', add_my_fruit)
 streamlit.write('Thanks for adding', add_my_fruit)
-my_cur.execute("insert into fruit_load_list values"('from streamlist'))
+my_cur.execute("insert into fruit_load_list values('from streamlist')")
 
