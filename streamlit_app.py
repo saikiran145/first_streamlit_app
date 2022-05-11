@@ -1,5 +1,6 @@
 import streamlit
 import requests
+import snowflake.connector
 from urllib.error import URLError
 streamlit.title('My Parents new healthy Diner')
 streamlit.header('Breakfast Favorites')
@@ -18,7 +19,7 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show=my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
-import snowflake.connector
+
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
