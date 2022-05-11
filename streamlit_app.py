@@ -27,7 +27,7 @@ try:
       Streamlit.error("Please select a fruit to get information.")
       else:
          back_from_function = get_fruityvice_data(fruit_choice)
-         streamlit.dataframe(back_fron_function)
+         streamlit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()
 import snowflake.connector
